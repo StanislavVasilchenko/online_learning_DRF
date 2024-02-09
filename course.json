@@ -1,0 +1,20 @@
+[
+  {
+    "model": "materials.course",
+    "pk": 1,
+    "fields": {
+      "name": "Python",
+      "description": "DRF",
+      "preview": ""
+    }
+  },
+  {
+    "model": "materials.course",
+    "pk": 2,
+    "fields": {
+      "name": "OOP",
+      "description": "Classes",
+      "preview": ""
+    }
+  }
+]
