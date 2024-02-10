@@ -1,0 +1,54 @@
+[
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "id": 1,
+      "date": "2024-02-09T18:34:06.502510Z",
+      "amount": "10000.12",
+      "method": "наличные",
+      "user": 1,
+      "course": 1,
+      "lesson": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "id": 2,
+      "date": "2024-02-09T17:34:06.502510Z",
+      "amount": "92000.54",
+      "method": "наличные",
+      "user": 1,
+      "course": 2,
+      "lesson": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "id": 3,
+      "date": "2024-02-09T16:34:06.502510Z",
+      "amount": "105000.00",
+      "method": "карта",
+      "user": 2,
+      "course": 2,
+      "lesson": 1
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 4,
+    "fields": {
+      "id": 4,
+      "date": "2024-02-08T15:34:06.502510Z",
+      "amount": "150000.00",
+      "method": "карта",
+      "user": 2,
+      "course": 2,
+      "lesson": 2
+    }
+  }
+]
