@@ -1,8 +1,8 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, generics
+from rest_framework import viewsets
 from rest_framework.filters import OrderingFilter
 
-from users.models import Payment, User
+from users.models import Payment
 from users.serializers.payment import PaymentSerializer
 
 
