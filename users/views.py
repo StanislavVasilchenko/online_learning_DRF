@@ -1,6 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, generics, status
 from rest_framework.filters import OrderingFilter
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from users.models import Payment, User
@@ -29,3 +30,9 @@ class UserRegisterAPIView(generics.CreateAPIView):
             user.set_password(request.data['password'])
             user.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class UserDetailAPIView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (IsAuthenticated,)
