@@ -7,3 +7,12 @@ class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
         fields = '__all__'
+
+
+class LessonsSerializerForUser(serializers.ModelSerializer):
+
+    class Meta:
+        model = Lesson
+        exclude = ['id', 'user']
+
+
