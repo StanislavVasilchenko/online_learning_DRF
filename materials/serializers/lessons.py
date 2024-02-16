@@ -14,5 +14,3 @@ class LessonsSerializerForUser(serializers.ModelSerializer):
     class Meta:
         model = Lesson
         exclude = ['id', 'user']
-
-
