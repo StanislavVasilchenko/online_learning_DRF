@@ -10,11 +10,11 @@ class IsModerator(permissions.BasePermission):
         return False
 
 
-class IsStaff(permissions.BasePermission):
-    message = 'You are not allowed to staff'
-
-    def has_permission(self, request, view):
-        return request.user.is_staff
+# class IsStaff(permissions.BasePermission):
+#     message = 'You are not allowed to staff'
+#
+#     def has_permission(self, request, view):
+#         return request.user.is_staff
 
 
 class IsUserIsOwner(permissions.BasePermission):
