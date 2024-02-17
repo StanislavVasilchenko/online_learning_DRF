@@ -12,7 +12,7 @@ class CourseViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.action in ['create', 'retrieve_delete']:
-            self.permission_classes = [IsAuthenticated, IsUserIsOwner]
+            self.permission_classes = [IsAuthenticated, IsUserIsOwner, ~IsModerator]
         else:
             self.permission_classes = [IsAuthenticated, IsUserIsOwner | IsModerator]
         return [permission() for permission in self.permission_classes]
