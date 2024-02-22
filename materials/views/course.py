@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
 from materials.models import Course
+from materials.paginators import LessonsAndCoursePaginator
 from materials.permissions import IsModerator, IsUserIsOwner
 from materials.serializers.course import CourseSerializer
 
@@ -9,6 +10,7 @@ from materials.serializers.course import CourseSerializer
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    pagination_class = LessonsAndCoursePaginator
 
     def get_permissions(self):
         if self.action in ['create', 'retrieve_delete']:
