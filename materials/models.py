@@ -7,6 +7,7 @@ class Course(models.Model):
     preview = models.ImageField(upload_to='materials/preview', verbose_name='превью', blank=True, null=True)
     user = models.ForeignKey('users.User', verbose_name='пользователь', on_delete=models.CASCADE,
                              blank=True, null=True)
+    price = models.PositiveIntegerField(default=10000, verbose_name='Ценв')
 
     def __str__(self):
         return self.name
@@ -26,6 +27,7 @@ class Lesson(models.Model):
                                null=True)
     user = models.ForeignKey('users.User', verbose_name='пользователь', on_delete=models.CASCADE,
                              blank=True, null=True)
+    price = models.PositiveIntegerField(default=10000, verbose_name='Ценв')
 
     def __str__(self):
         return self.name
