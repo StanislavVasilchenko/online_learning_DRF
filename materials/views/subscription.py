@@ -40,10 +40,10 @@ class SubscriptionAPIView(APIView):
 
         if subscription.exists():
             subscription.delete()
-            message = f"Subscription delete"
+            message = "Subscription delete"
 
         else:
             Subscription.objects.create(user=user, course=course_item).save()
-            message = f"Subscription created"
+            message = "Subscription created"
 
         return Response({"message": message})
