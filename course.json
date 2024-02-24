@@ -4,8 +4,10 @@
     "pk": 1,
     "fields": {
       "name": "Python",
-      "description": "DRF",
-      "preview": ""
+      "description": "Supper1",
+      "preview": "",
+      "user": null,
+      "price": 10000
     }
   },
   {
@@ -14,7 +16,20 @@
     "fields": {
       "name": "OOP",
       "description": "Classes",
-      "preview": ""
+      "preview": "",
+      "user": null,
+      "price": 25456
+    }
+  },
+  {
+    "model": "materials.course",
+    "pk": 3,
+    "fields": {
+      "name": "Create User",
+      "description": "In Course2",
+      "preview": "",
+      "user": 21,
+      "price": 10000
     }
   }
 ]
