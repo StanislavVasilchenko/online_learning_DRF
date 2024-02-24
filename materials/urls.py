@@ -3,7 +3,7 @@ from rest_framework import routers
 
 
 from materials.apps import MaterialsConfig
-from materials.views.course import CourseViewSet
+from materials.views.course import CourseViewSet, CoursePaymentAPIView
 from materials.views.lessons import LessonsListAPIView, LessonCreateAPIView, LessonDetailAPIView, LessonUpdateAPIView, \
     LessonDeleteAPIView
 from materials.views.subscription import SubscriptionAPIView
@@ -20,6 +20,7 @@ urlpatterns = [
     path('detail/<int:pk>/', LessonDetailAPIView.as_view(), name='lessons_detail'),
     path('update/<int:pk>/', LessonUpdateAPIView.as_view(), name='lessons_update'),
     path('delete/<int:pk>/', LessonDeleteAPIView.as_view(), name='lessons_delete'),
+    path('payment/', CoursePaymentAPIView.as_view(), name='payment_course'),
 
     #  subscription
     path('subscription/', SubscriptionAPIView.as_view(), name='subscription')
