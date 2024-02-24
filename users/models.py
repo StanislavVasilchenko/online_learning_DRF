@@ -29,7 +29,7 @@ class Payment(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='lesson_payments', blank=True, null=True)
     date = models.DateTimeField(verbose_name='дата оплаты', auto_now_add=True)
     amount = models.DecimalField(verbose_name='сумма оплаты', blank=True, null=True, max_digits=10, decimal_places=2)
-    method = models.CharField(verbose_name='способ оплаты', max_length=25, choices=PAYMENT_METHOD, default=CASH)
+    method = models.CharField(verbose_name='способ оплаты', max_length=25, choices=PAYMENT_METHOD, default=CARD)
 
     def __str__(self):
         return f'{self.user} - {self.amount} - {self.method}'
