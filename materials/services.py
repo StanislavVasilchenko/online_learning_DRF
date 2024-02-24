@@ -1,6 +1,7 @@
 import stripe
+from private_settings import STRIPE_API_KEY
 
-stripe.api_key = 'sk_test_51OnKQIBBeaQdBk1QT5YEKFYOx2kuwPmy2010AJp1sNZCfnSKzXp19ldVcJ9K1MilQ2qj2qt2sIlQJp4CFEuakTee00XqMv8KvL'
+stripe.api_key = STRIPE_API_KEY
 
 
 def get_url_payment(course):
