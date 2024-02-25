@@ -4,19 +4,22 @@ from private_settings import STRIPE_API_KEY
 stripe.api_key = STRIPE_API_KEY
 
 
-def get_url_payment(course):
-    product = stripe.Product.create(name=course.name)
+def create_product(amount, prod_name):
+    stripe.Product.create(name=prod_name)
 
     price = stripe.Price.create(
         currency="rub",
-        unit_amount=course.price * 100,
-        product_data={"name": f'Оплата курса - {product.get('name')}'},
+        unit_amount=amount * 100,
+        product_data={"name": prod_name},
     )
+    return price
 
+
+def create_session(price):
     session = stripe.checkout.Session.create(
-        success_url="https://example.com/success",
+        success_url="http://localhost:8000/materials/",
         line_items=[{"price": price, "quantity": 1}],
         mode="payment",
     )
 
-    return session.get('url')
+    return session
