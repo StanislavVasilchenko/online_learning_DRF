@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
-from private_settings import DB_USER, DB_NAME, DJANGO_KEY, BROKER_URL, RESULT_BACKEND
+from private_settings import (DB_USER, DB_NAME, DJANGO_KEY, BROKER_URL,
+                              RESULT_BACKEND, HOST, HOST_USER, HOST_PASSWORD)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -161,8 +162,8 @@ CELERY_BROKER_URL = BROKER_URL
 CELERY_RESULT_BACKEND = RESULT_BACKEND
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST = HOST
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'stanislav.vasilchenko@yandex.ru'
-EMAIL_HOST_PASSWORD = 'oxfkibvtyplzqeby'
+EMAIL_HOST_USER = HOST_USER
+EMAIL_HOST_PASSWORD = HOST_PASSWORD
 EMAIL_USE_SSL = True
