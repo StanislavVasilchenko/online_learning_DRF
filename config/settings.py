@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
-from private_settings import DB_USER, DB_NAME, DJANGO_KEY
-
+from private_settings import DB_USER, DB_NAME, DJANGO_KEY, BROKER_URL, RESULT_BACKEND
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_filters',
+    'django_celery_beat',
 
     'users',
     'materials',
@@ -155,3 +155,7 @@ SWAGGER_SETTINGS = {
         }
     }
 }
+
+
+CELERY_BROKER_URL = BROKER_URL
+CELERY_RESULT_BACKEND = RESULT_BACKEND
