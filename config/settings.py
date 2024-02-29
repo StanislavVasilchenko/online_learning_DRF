@@ -159,3 +159,10 @@ SWAGGER_SETTINGS = {
 
 CELERY_BROKER_URL = BROKER_URL
 CELERY_RESULT_BACKEND = RESULT_BACKEND
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'stanislav.vasilchenko@yandex.ru'
+EMAIL_HOST_PASSWORD = 'oxfkibvtyplzqeby'
+EMAIL_USE_SSL = True
