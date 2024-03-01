@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
+
+from celery.schedules import crontab
+
 from private_settings import (DB_USER, DB_NAME, DJANGO_KEY, BROKER_URL,
                               RESULT_BACKEND, HOST, HOST_USER, HOST_PASSWORD)
 
@@ -160,6 +163,13 @@ SWAGGER_SETTINGS = {
 
 CELERY_BROKER_URL = BROKER_URL
 CELERY_RESULT_BACKEND = RESULT_BACKEND
+
+CELERY_BEAT_SCHEDULE = {
+    'deactivate_user': {
+        'task': 'materials.tasks.deactivate_user',
+        'schedule': timedelta(days=1)
+    }
+}
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = HOST
